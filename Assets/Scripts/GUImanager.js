@@ -47,7 +47,7 @@ var shieldfull : float = 1-(currentShield/100);
 	shieldMat.SetFloat("_Cutoff",shieldfull);
 
 if (currentShield <= 0){
-	CharacterTest.shieldEmpty = true;
+	characterBattle.shieldEmpty = true;
 
 }
 }

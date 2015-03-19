@@ -1,0 +1,89 @@
+fileFormatVersion: 2
+guid: bbe76d9eb60cd484ba9dc4f7ed34d3be
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: cavehouse
+    100002: cavelights
+    100004: cavelightsUUU
+    100006: //RootNode
+    100008: Lvl2Tunnel
+    100010: Particle View 001
+    100012: walkaway
+    400000: cavehouse
+    400002: cavelights
+    400004: cavelightsUUU
+    400006: //RootNode
+    400008: Lvl2Tunnel
+    400010: Particle View 001
+    400012: walkaway
+    2300000: cavehouse
+    2300002: cavelights
+    2300004: cavelightsUUU
+    2300006: Lvl2Tunnel
+    2300008: walkaway
+    3300000: cavehouse
+    3300002: cavelights
+    3300004: cavelightsUUU
+    3300006: Lvl2Tunnel
+    3300008: walkaway
+    4300000: Lvl2Tunnel
+    4300002: walkaway
+    4300004: cavehouse
+    4300006: cavelights
+    4300008: cavelightsUUU
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

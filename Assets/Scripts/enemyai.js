@@ -26,10 +26,12 @@ function Update(){
 	//print(distance);
 	if (distance < 15){
 	playerSpotted = true;
+	anim.SetBool("playerSpotted",true);
 	
-		if(distance < 5) {
+		if(distance < 4) {
 			battleOn = true;
 			anim.SetBool("battleOn",true);
+			anim.SetBool("playerSpotted",false);
 			speed = 0;
 			transform.LookAt(target);
 			if(canHit){
@@ -43,12 +45,14 @@ function Update(){
 	playerSpotted = false;
 	battleOn = false;
 	speed = storedSpeed;
+	anim.SetBool("playerSpotted",false);
 	
 	anim.SetBool("battleOn",false);
 	}
 	
 	if (playerSpotted ){
 	myTransform.rotation = Quaternion.Slerp(myTransform.rotation,Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed*Time.deltaTime);
+	
 	}
 	
 	if (health <= 0){
@@ -80,7 +84,7 @@ function OnCollisionEnter(collision : Collision){
 }
 
 function OnTriggerEnter(other : Collider){
-	if(other.gameObject.tag == "weapon"){
+	if(other.gameObject.tag == "playerweapon"){
 		if(canDamage){
 		health -= 10;
 		print("enemy takes damage");
