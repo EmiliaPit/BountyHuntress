@@ -8,6 +8,7 @@ var smooth = 15.0;
 var gameCam : Camera;
 var directionSpeed : float;
 var rotationDegreePerSecond : float = 120.0;
+static var keycardcount = 0;
 
 var direction = 0.0;
 var horizontal = 0.0;
@@ -33,10 +34,11 @@ function Update()
 	anim.SetFloat("Direction",direction ,directionDampTime,Time.deltaTime);
 	
 	
+	
 
 
 	
-	if(Input.GetButtonDown("Jump"))
+	/*if(Input.GetButtonDown("Jump"))
 	{
 		anim.SetBool("Jump",true);
 		rigidbody.AddForce(Vector3.up*jumpSpeed);
@@ -45,7 +47,7 @@ function Update()
 	if(Input.GetAxis("Target")>0.1)
 	{
 		print("pulled trigger");
-	}
+	}*/
 	
 }
 

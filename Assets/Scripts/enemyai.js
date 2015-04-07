@@ -11,6 +11,15 @@ var canHit : boolean = true;
 var swordTrigger : GameObject;
 var health : float = 100;
 var canDamage = true;
+var deathEffect : Transform;
+var allmotions : AnimationClip[];
+var healthdrop : Transform;
+var shielddrop : Transform;
+var animationcounter = 0;
+var deathSound : GameObject;
+var minionSound : GameObject;
+
+
 
 
 function Start () {
@@ -18,17 +27,22 @@ function Start () {
 	//target = GameObject.FindWithTag("Player").transform;
 	anim = GetComponent(Animator);
 	storedSpeed = speed;
+	  
 }
 
 function Update(){
 	this.transform.Translate(Vector3.forward * speed *Time.deltaTime);
 	var distance = Vector3.Distance(target.position,transform.position);
 	//print(distance);
-	if (distance < 15){
+	if (distance < 10 && distance > 5.1){
 	playerSpotted = true;
 	anim.SetBool("playerSpotted",true);
 	
-		if(distance < 4) {
+	
+		
+		}
+		
+			if(distance < 5) {
 			battleOn = true;
 			anim.SetBool("battleOn",true);
 			anim.SetBool("playerSpotted",false);
@@ -37,8 +51,6 @@ function Update(){
 			if(canHit){
 			Battle();
 			}
-		
-		}
 	}
 	
 	else {
@@ -56,14 +68,16 @@ function Update(){
 	}
 	
 	if (health <= 0){
+	deathSound.SetActive(true);
 		print("enemy dead");
+		
 		Destroy(this.gameObject);
-	
+		Instantiate(deathEffect,transform.position,transform.rotation);
+		Instantiate(shielddrop,transform.position,transform.rotation);
+		Instantiate(healthdrop,transform.position,transform.rotation);
 	}
+}
 	
-	}
-				
-
 
 function randomRotation () {
 	while(isWalking) {
@@ -86,23 +100,47 @@ function OnCollisionEnter(collision : Collision){
 function OnTriggerEnter(other : Collider){
 	if(other.gameObject.tag == "playerweapon"){
 		if(canDamage){
+		minionSound.SetActive(true);
 		health -= 10;
-		print("enemy takes damage");
 		canDamage = false;
-		yield WaitForSeconds(1.0);
+		yield WaitForSeconds(0.5);
 		canDamage = true;
+		
 		}
 	}
 
 }
 
+function OnTriggerExit(other : Collider){
+	if(other.gameObject.tag == "playerweapon"){
+	minionSound.SetActive(false);
+}
+}
 
 function Battle () {
 	canHit = false;
-	var randomTime = Random.Range(2.0,10.0);
+	var randomTime = Random.Range(0.5,4.0);
 	yield WaitForSeconds(randomTime);
+	
 	anim.SetBool("canHit",true);
 	swordTrigger.collider.enabled = true;
+	if(animationcounter == 1){
+	anim.SetBool("battle1",true);
+	anim.SetBool("battle2",false);
+	anim.SetBool("battle3",false);
+	}
+	if(animationcounter == 2){
+	anim.SetBool("battle2",true);
+	anim.SetBool("battle1",false);
+	anim.SetBool("battle3",false);
+	}
+	if(animationcounter == 3){
+	anim.SetBool("battle3",true);
+	anim.SetBool("battle2",false);
+	anim.SetBool("battle1",false);
+	}
+	
+
 	
 	
 	
@@ -113,4 +151,20 @@ function StopHit() {
 	anim.SetBool("canHit",false);
 	canHit = true;
 	swordTrigger.collider.enabled = false;
+	animationcounter = (Random.Range(0,4));
+		if(animationcounter == 1){
+	anim.SetBool("battle1",true);
+	anim.SetBool("battle2",false);
+	anim.SetBool("battle3",false);
+	}
+	if(animationcounter == 2){
+	anim.SetBool("battle2",true);
+	anim.SetBool("battle1",false);
+	anim.SetBool("battle3",false);
+	}
+	if(animationcounter == 3){
+	anim.SetBool("battle3",true);
+	anim.SetBool("battle2",false);
+	anim.SetBool("battle1",false);
+	}
 }

@@ -28,11 +28,20 @@ function UseEffect ()
 	
 	if(tag == "hppotion"){
 	if(GUImanager.currentShield < 100){
-		GUImanager.currentHealth +=10;}}
+		GUImanager.currentHealth +=20;}}
 		
 	if(tag == "shieldpotion"){
 	if(GUImanager.currentShield < 100){
-		GUImanager.currentShield +=20;}}
+		GUImanager.currentShield +=20;
+		characterBattle.shieldEmpty = false;
+		}
+	if(GUImanager.currentShield < 0){
+		GUImanager.currentShield +=20;
+		characterBattle.shieldEmpty = false;
+		}
+		}
+		
+	
 	//Play a sound
 	playersInv.gameObject.SendMessage("PlayDropItemSound", SendMessageOptions.DontRequireReceiver);
 	

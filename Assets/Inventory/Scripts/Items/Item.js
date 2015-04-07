@@ -79,6 +79,12 @@ function PickUpItem ()
 				getit=false;
 				locatedit.stack+=1;
 				Destroy(this.gameObject);
+				
+				if(tag == "keycard"){
+					characterBattle.keycardcount += 1;
+	
+						}
+				
 			}
 			else{
 				getit=true;

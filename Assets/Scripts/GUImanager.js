@@ -2,7 +2,7 @@
 var maxHealth : int = 100;
 var healthTexture : Texture2D;
 var mat : Material;
-
+var anim : Animator;
 
 
 var x : float = 0;
@@ -16,10 +16,12 @@ var shieldTexture : Texture2D;
 var shieldMat : Material;
 
 
+
 var x2: float = 0;
 var y2 : float = 0;
 var w2 : float;
 var h2 : float;
+
 
 var barLength = 0.0;
 
@@ -46,13 +48,22 @@ var shieldfull : float = 1-(currentShield/100);
 	}
 	shieldMat.SetFloat("_Cutoff",shieldfull);
 
-if (currentShield <= 0){
+if (currentShield < 0){
 	characterBattle.shieldEmpty = true;
+	
+		
 
 }
+if (currentHealth < 0 && currentShield < 0){
+		anim.SetBool("dead",true);
+
+
+}
+
 }
 
 function OnGUI(){
+	
 	if(Event.current.type.Equals(EventType.Repaint)){
 		var box : Rect = new Rect(x,y,w,h);
 		Graphics.DrawTexture(box, healthTexture, mat);

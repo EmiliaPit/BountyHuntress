@@ -126,7 +126,7 @@ function OnGUI()
 	//If the inventory is opened up we create the Inventory window:
 	if(displayInventory)
 	{
-		windowRect = GUI.Window (0, windowRect, DisplayInventoryWindow, "Inventory");
+		windowRect = GUI.Window (0, windowRect, DisplayInventoryWindow, " ");
 	}
 }
 
@@ -209,8 +209,8 @@ function DisplayInventoryWindow(windowID:int)
 		}
 		
 		if(item.stackable) //If the item can be stacked:
-		{
-			GUI.Label(Rect(currentX, currentY, itemIconSize.x, itemIconSize.y), "" + item.stack, "Stacks"); //Showing the number (if stacked).
+		{	 
+			GUI.Label(Rect(currentX, currentY, itemIconSize.x, itemIconSize.y), " " + item.stack, "Stacks"); //Showing the number (if stacked).
 		}
 		
 		currentX += itemIconSize.x;

@@ -10,6 +10,7 @@ ModelImporter:
     100008: Lvl2Tunnel
     100010: Particle View 001
     100012: walkaway
+    100014: putki1
     400000: cavehouse
     400002: cavelights
     400004: cavelightsUUU
@@ -17,21 +18,25 @@ ModelImporter:
     400008: Lvl2Tunnel
     400010: Particle View 001
     400012: walkaway
+    400014: putki1
     2300000: cavehouse
     2300002: cavelights
     2300004: cavelightsUUU
     2300006: Lvl2Tunnel
     2300008: walkaway
+    2300010: putki1
     3300000: cavehouse
     3300002: cavelights
     3300004: cavelightsUUU
     3300006: Lvl2Tunnel
     3300008: walkaway
+    3300010: putki1
     4300000: Lvl2Tunnel
     4300002: walkaway
     4300004: cavehouse
     4300006: cavelights
     4300008: cavelightsUUU
+    4300010: putki1
     9500000: //RootNode
   materials:
     importMaterials: 1

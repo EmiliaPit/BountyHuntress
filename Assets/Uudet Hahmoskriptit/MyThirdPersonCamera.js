@@ -43,14 +43,15 @@ function SmoothPosition(fromPos : Vector3, toPos : Vector3)
 	transform.position = Vector3.SmoothDamp(fromPos, toPos, velocityCamSmooth, camSmoothDampTime);
 }
 
-function CompensateForWalls(fromObject : Vector3, toPos : Vector3)
+function CompensateForWalls(fromObject : Vector3, toTarget : Vector3)
 {
-	Debug.DrawLine(fromObject, toPos, Color.cyan);
+	Debug.DrawLine(fromObject, toTarget, Color.cyan);
 	var wallHit : RaycastHit = new RaycastHit();
-	if(Physics.Linecast(fromObject, toPos, wallHit))
+	
+	if(Physics.Linecast(fromObject, toTarget, wallHit))
 	{
-		Debug.DrawRay(wallHit.point, Vector3.left, Color.red);
-		var toTarget = new Vector3(wallHit.point.x, toPos.y, wallHit.point.z);
-		toPos = toTarget;
+		Debug.DrawRay(wallHit.point, Vector3.right, Color.red);
+		targetPosition = new Vector3(wallHit.point.x, targetPosition.y, wallHit.point.z+5);
+		
 	}
 }

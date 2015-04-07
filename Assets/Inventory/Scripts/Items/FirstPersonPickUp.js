@@ -43,11 +43,11 @@ function OnGUI ()
 	{
 		if (transform.name.Length <= 7)
 		{
-			GUI.Box (Rect (Screen.width*0.5-(165*0.5), 200, 165, 22), "Press E to pick up " + transform.name + ".");
+			GUI.Box (Rect (Screen.width*0.5-(165*0.5), 200, 165, 50), "Press E to pick up item.");
 		}
 		else
 		{
-			GUI.Box (Rect (Screen.width*0.5-(185*0.5), 200, 185, 22), "Press E to pick up " + transform.name + ".");
+			GUI.Box (Rect (Screen.width*0.5-(185*0.5), 200, 185, 50), "Press E to pick up item.");
 		}
 	}
 }
